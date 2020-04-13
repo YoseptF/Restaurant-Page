@@ -1,0 +1,42 @@
+{
+  "name": "restaurant_page",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently --kill-others npm:start-*",
+    "build": "webpack --mode=production",
+    "start-webpack": "webpack --mode=development --watch",
+    "start-sync": "wait-on dist/index.html && browser-sync dist/ --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YoseptF/Restaurant-Page.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YoseptF/Restaurant-Page/issues"
+  },
+  "homepage": "https://github.com/YoseptF/Restaurant-Page#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "babel-loader": "^8.1.0",
+    "browser-sync": "^2.26.7",
+    "clean-webpack-plugin": "^3.0.0",
+    "concurrently": "^5.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "html-webpack-plugin": "^4.2.0",
+    "sass": "^1.26.3",
+    "sass-loader": "^8.0.2",
+    "url-loader": "^4.1.0",
+    "wait-on": "^4.0.2",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  }
+}
