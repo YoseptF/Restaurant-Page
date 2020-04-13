@@ -1,15 +1,18 @@
-export const $ = window.$ = document.querySelector.bind(document);
-export const $$ = window.$$ = document.querySelectorAll.bind(document);
+window.$ = document.querySelector.bind(document);
+export const { $ } = window;
+window.$$ = document.querySelectorAll.bind(document);
+export const { $$ } = window;
 
 export const bling = () => {
-  Node.prototype.on = window.on = function (name, fn) {
+  window.on = function onFun(name, fn) {
     this.addEventListener(name, fn);
   };
+  Node.prototype.on = window.on;
 
-  NodeList.prototype.__proto__ = Array.prototype;
+  Object.setPrototypeOf(NodeList, Array.prototype);
 
-  NodeList.prototype.on = function (name, fn) {
-    this.forEach((elem, i) => {
+  NodeList.prototype.on = function onfun(name, fn) {
+    this.forEach((elem) => {
       elem.on(name, fn);
     });
   };

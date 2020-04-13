@@ -1,5 +1,2 @@
-import { $, bling } from './packages/bling';
-
-bling();
-
-$('body');
+import './packages/onload';
+import './sass/style.scss';
