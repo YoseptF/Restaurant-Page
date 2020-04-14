@@ -9,11 +9,7 @@ This is an example of how to make a page almost completly completly out of js.
 
 1. Clone this repo
 ```
-$ git clone git@github.com:YoseptF/Restaurant-Page.git
-``` 
-or
-```
-$ git clone https://github.com/YoseptF/Restaurant-Page.git
+$ git clone git@github.com:YoseptF/Restaurant-Page.git || $ git clone https://github.com/YoseptF/Restaurant-Page.git
 ``` 
 2. cd into the correct branch
 ```
@@ -21,7 +17,7 @@ $ cd [your desired branch]
 ``` 
 2. install the dependencies
 ```
-$ npm install || yarn install
+$ npm install
 ```
 3. start the project
 ```
@@ -33,6 +29,12 @@ It will automatically open a browser tab, but if for some reason it doesn't, you
 ```
 http://localhost:3000/
 ``` 
+
+---
+
+## Live version
+
+If you want to see it but don't feel like downloading, you can see a live version [here](https://silly-noether-6055f6.netlify.com/)
 
 ---
 
