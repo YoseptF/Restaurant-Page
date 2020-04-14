@@ -40,6 +40,8 @@ http://localhost:3000/
 
 - JS
 - HTML
+- This html
+- [This tabs](https://codepen.io/tutsplus/pen/VLeXqy) as base
 
 ---
 
