@@ -26,7 +26,7 @@ module.exports = {
           {
             loader: 'url-loader',
             options: {
-              limit: 5000000, // Convert images < 8kb to base64 strings
+              limit: 50000, // Convert images < 5mb to base64 strings
               name: 'images/[hash]-[name].[ext]',
             },
           },
@@ -47,7 +47,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'dogos',
+      title: 'Restaurant Page',
+      favicon: './src/images/favicon.ico',
     }),
     new CleanWebpackPlugin({
       cleanAfterEveryBuildPatterns: ['*.*.js'],

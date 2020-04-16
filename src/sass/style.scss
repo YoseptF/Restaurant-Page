@@ -1,0 +1,156 @@
+@import "./tabs.scss";
+@import url("https://fonts.googleapis.com/css?family=Roboto:500,900&display=swap");
+
+@mixin centeredAbsolute($width: 50%, $height: 50%) {
+  top: $width;
+  left: $width;
+
+  transform: translate(-$width, -$height);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+#content {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-areas: "t t t t t t t t t t t t";
+
+  .topImg {
+    grid-area: i;
+    img {
+      width: 100%;
+    }
+  }
+
+  .tabs {
+    grid-area: t;
+  }
+}
+
+.greeting {
+  padding: 68px 18px;
+  background: $secondary;
+  position: absolute;
+  border: 5px solid$light;
+  width: 40vw;
+  @include centeredAbsolute;
+  padding-right: 24px;
+  
+  h1 {
+    font-weight: 900;
+    font-size: 5rem;
+    line-height: 5rem;
+    margin-bottom: 1rem;
+    text-align: right;
+    text-transform: uppercase;
+  }
+  p {
+    text-align: right;
+    width: 100%;
+  }
+  @media (max-width: 1211px) {
+    width: 50vw;
+    h1 {
+      font-size: 4rem;
+      line-height: 4rem;
+    }
+  }
+  @media (max-width: 982px) {
+    width: 60vw;
+    h1 {
+      font-size: 3rem;
+      line-height: 3rem;
+    }
+  }
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+
+  @media (max-width: 1500px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 1100px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .item {
+    border-radius: 4px;
+    grid-column: span 1;
+    background: $secondary;
+    display: flex;
+    .left {
+      width: 50%;
+    }
+    .right {
+      padding: 24px;
+      text-align: right;
+      width: 50%;
+      h1 {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+
+.contactContent {
+  form {
+    padding: 34px 18px 68px 18px;
+    background: $secondary;
+    position: absolute;
+    border: 5px solid$light;
+    width: 30vw;
+    padding-right: 24px;
+    display: flex;
+    flex-direction: column;
+
+    @include centeredAbsolute;
+
+    @media (max-width: 1100px) {
+      width: 50vw;
+    }
+
+    @media (max-width: 740px) {
+      width: 60vw;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    input,
+    textarea {
+      color: grey;
+      margin-bottom: 24px;
+      font-size: 1.5rem;
+      border-radius: 4px;
+    }
+
+    input {
+      padding: 0.3rem 0 0 1rem;
+      height: 45px;
+    }
+
+    textarea {
+      padding: 0.5rem 1.5rem 0 1rem;
+      height: 110px;
+    }
+
+    input[type="submit"] {
+      cursor: pointer;
+      color: $secondary;
+      &:hover {
+        background: $secondary;
+        color: $light;
+      }
+    }
+  }
+}

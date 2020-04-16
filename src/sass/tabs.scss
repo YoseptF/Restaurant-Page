@@ -1,0 +1,98 @@
+$primary: #00798c;
+$secondary: #003d5b;
+$alert: #edae49;
+$danger: #d1495b;
+$light: #eaf2e3;
+
+* {
+  box-sizing: border-box;
+}
+body {
+  background: $primary;
+  font-family: "Open Sans";
+  color: $light;
+  line-height: 1.618em;
+}
+.wrapper {
+  max-width: 50rem;
+  width: 100%;
+  margin: 0 auto;
+}
+.tabs {
+  position: relative;
+  background: $primary;
+  width: 6.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.tabs::before,
+.tabs::after {
+  content: "";
+  display: table;
+}
+.tabs::after {
+  clear: both;
+}
+.tab {
+  float: left;
+  height: 33.33vh;
+}
+.tab-switch {
+  display: none;
+}
+.tab-label {
+  text-transform: capitalize;
+  position: relative;
+  display: block;
+  line-height: 2.75em;
+  height: 3em;
+  padding: 0 1.618em;
+  background: $secondary;
+  border-right: 0.125rem solid $alert;
+  color: $light;
+  cursor: pointer;
+  top: 0;
+  transition: all 0.25s;
+  height: 33.33vh;
+  span{
+    transform: rotate(90deg) translate(-50%, 10%);
+    display: block;
+    font-size: 42px;
+    position: absolute;
+    left: -10%;
+    top: 50%;
+  }
+}
+.tab-label:hover {
+  left: -0.25rem;
+  transition: left 0.25s;
+}
+.tab-content {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: calc(100vw - 6.5rem);
+  position: absolute;
+  z-index: 1;
+  top: -1px;
+  left: 6.5rem;
+  padding: 1.618rem;
+  background: $secondary;
+  color: $light;
+  display: none;
+  transition: all 0.35s;
+}
+.tab-switch:checked + .tab-label {
+  background: #fff;
+  color: #2c3e50;
+  border-bottom: 0;
+  border-right: 0.125rem solid #fff;
+  transition: all 0.35s;
+  z-index: 1;
+  top: -0.0625rem;
+}
+.tab-switch:checked + label + .tab-content {
+  z-index: 2;
+  display: block;
+  transition: all 0.35s;
+}
